@@ -1,0 +1,135 @@
+.email-input {
+    --text: #646B8C;
+    --text-placeholder: #BBC1E1;
+    --icon: #A6ACCD;
+    --icon-focus: #646B8C;
+    --icon-invalid: #F04949;
+    --icon-valid: #16BF78;
+    --background: #fff;
+    --border: #D1D6EE;
+    --border-hover: #A6ACCD;
+    --border-focus: #275EFE;
+    --shadow-focus: rgba(39, 94, 254, 0.32);
+    position: relative;
+    max-width: 220px;
+  }
+  .email-input input {
+    width: 100%;
+    -webkit-appearance: none;
+    outline: none;
+    display: block;
+    font-size: 14px;
+    font-family: inherit;
+    margin: 0;
+    padding: 8px 16px 8px 41px;
+    line-height: 26px;
+    border-radius: 6px;
+    color: var(--text);
+    border: 1px solid var(--bc, var(--border));
+    background: var(--background);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .email-input input::-moz-placeholder {
+    color: var(--text-placeholder);
+  }
+  .email-input input:-ms-input-placeholder {
+    color: var(--text-placeholder);
+  }
+  .email-input input::placeholder {
+    color: var(--text-placeholder);
+  }
+  .email-input svg {
+    width: 16px;
+    height: 16px;
+    top: 14px;
+    left: 14px;
+    display: block;
+    position: absolute;
+    fill: none;
+    stroke: var(--i, var(--icon));
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+    transition: stroke 0.3s;
+  }
+  .email-input svg path {
+    stroke-dasharray: 80;
+    stroke-dashoffset: var(--path, 170);
+    transition: stroke-dashoffset 0.5s ease var(--path-delay, 0.3s);
+  }
+  .email-input svg polyline {
+    stroke-dasharray: 12;
+    stroke-dashoffset: var(--tick, 12);
+    transition: stroke-dashoffset 0.45s ease var(--tick-delay, 0s);
+  }
+  .email-input:hover {
+    --bc: var(--border-hover);
+  }
+  .email-input:focus-within {
+    --bc: var(--border-focus);
+    --i: var(--icon-focus);
+  }
+  .email-input:focus-within input {
+    box-shadow: 0 1px 6px -1px var(--shadow-focus);
+  }
+  .email-input:not(.valid) input:not(:-moz-placeholder-shown):not(:focus) + svg {
+    --i: var(--icon-invalid);
+  }
+  .email-input:not(.valid) input:not(:-ms-input-placeholder):not(:focus) + svg {
+    --i: var(--icon-invalid);
+  }
+  .email-input:not(.valid) input:not(:placeholder-shown):not(:focus) + svg {
+    --i: var(--icon-invalid);
+  }
+  .email-input.valid {
+    --i: var(--icon-valid);
+    --path: 132;
+    --path-delay: 0s;
+    --tick: 0;
+    --tick-delay: .3s;
+  }
+  
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    font-family: "Inter UI", "Inter", Arial;
+    justify-content: center;
+    align-items: center;
+    background: #dcefff;
+  }
+  body .email-input {
+    width: 100%;
+  }
+  body .dribbble {
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+  }
+  body .dribbble img {
+    display: block;
+    height: 28px;
+  }
+  body .twitter {
+    position: fixed;
+    display: block;
+    right: 64px;
+    bottom: 14px;
+  }
+  body .twitter svg {
+    width: 32px;
+    height: 32px;
+    fill: #1da1f2;
+  }
